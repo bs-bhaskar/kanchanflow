@@ -1,69 +1,202 @@
-import Image from "next/image";
+
+const features = [
+  {
+    number: "01",
+    title: "Quote to Order",
+    description:
+      "Turn customer enquiries into accurate quotations and confirmed orders with a clear, organized workflow.",
+  },
+  {
+    number: "02",
+    title: "Bill of Materials",
+    description:
+      "Keep product components, material requirements and costing details organized in one place.",
+  },
+  {
+    number: "03",
+    title: "Sales Pipeline",
+    description:
+      "Track every opportunity from the first enquiry to the final order without losing sight of follow-ups.",
+  },
+  {
+    number: "04",
+    title: "WhatsApp Follow-ups",
+    description:
+      "Keep customer conversations and follow-up tasks close to your sales workflow.",
+  },
+  {
+    number: "05",
+    title: "Reports & Insights",
+    description:
+      "Get a clearer view of quotations, order progress and sales performance.",
+  },
+  {
+    number: "06",
+    title: "Work Anywhere",
+    description:
+      "Keep your team connected to important sales and order information across devices.",
+  },
+];
+
+function DashboardMockup() {
+  return (
+    <div className="dashboard">
+      <div className="dashboard-top">
+        <div className="window-dots" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+        <span> KANCHANFLOW / OVERVIEW </span>
+        <span className="dashboard-status">● Live overview</span>
+      </div>
+
+      <div className="dashboard-body">
+        <aside className="dashboard-sidebar">
+          <strong>K<span>F</span></strong>
+          <span className="sidebar-active">Overview</span>
+          <span>Quotations</span>
+          <span>Work Orders</span>
+          <span>Customers</span>
+          <span>Reports</span>
+        </aside>
+
+        <div className="dashboard-content">
+          <p className="dashboard-eyebrow">WORKSPACE / OVERVIEW</p>
+          <h3>Good morning, Team.</h3>
+          <p className="dashboard-subtitle">
+            Here&apos;s what&apos;s happening with your business.
+          </p>
+
+          <div className="dashboard-stats">
+            <div>
+              <span>Open quotations</span>
+              <strong>24</strong>
+              <small>Across active customers</small>
+            </div>
+            <div>
+              <span>Work orders</span>
+              <strong>12</strong>
+              <small>Currently in progress</small>
+            </div>
+            <div>
+              <span>Pipeline value</span>
+              <strong>₹8.4L</strong>
+              <small>Illustrative sample data</small>
+            </div>
+          </div>
+
+          <div className="dashboard-table">
+            <div className="table-heading">
+              <strong>Recent work orders</strong>
+              <span>View all ↗</span>
+            </div>
+            <div className="table-row">
+              <span>WO-2048</span>
+              <span>Precision Components</span>
+              <span className="status-progress">In progress</span>
+            </div>
+            <div className="table-row">
+              <span>WO-2047</span>
+              <span>Industrial Systems</span>
+              <span className="status-review">Under review</span>
+            </div>
+            <div className="table-row">
+              <span>WO-2046</span>
+              <span>Metro Fabrication</span>
+              <span className="status-complete">Completed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <section className="hero-section">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <span className="hero-badge">
+              <span className="badge-dot" />
+              BUILT FOR MODERN MANUFACTURING
+            </span>
+
+            <h1>
+              From quotation to production.
+              <span> All in one flow.</span>
+            </h1>
+
+            <p className="hero-description">
+              Bring quotations, work orders and your manufacturing sales
+              pipeline together in one clear workspace. Less chasing.
+              More control.
+            </p>
+
+            <div className="hero-actions">
+              <a href="/pricing" className="btn btn-primary">
+                Explore Plans <span aria-hidden="true">↗</span>
+              </a>
+              <a href="#features" className="btn btn-secondary">
+                Explore Features
+              </a>
+            </div>
+
+            <p className="hero-note">
+              Designed for teams that build things.
+            </p>
+          </div>
+
+          <div className="hero-visual">
+            <DashboardMockup />
+          </div>
+        </div>
+      </section>
+
+      <section className="section features-section" id="features">
+        <div className="container">
+          <div className="features-heading">
+            <span className="section-label">ONE CONNECTED WORKFLOW</span>
+            <h2 className="section-title">
+              Less paperwork.
+              <br />
+              More production.
+            </h2>
+            <p className="section-description">
+              Keep your team, customer enquiries and order progress connected
+              without jumping between disconnected tools.
+            </p>
+          </div>
+
+          <div className="features-grid">
+            {features.map((feature) => (
+              <article className="feature-card" key={feature.number}>
+                <span className="feature-number">{feature.number}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+                <span className="feature-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="closing-section">
+        <div className="container closing-inner">
+          <span className="section-label">A CLEARER WAY TO WORK</span>
+          <h2>Bring every order into focus.</h2>
+          <p>
+            Explore a more organized workflow for your manufacturing business.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+          <a href="/pricing" className="btn btn-primary">
+            View Pricing <span aria-hidden="true">↗</span>
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
